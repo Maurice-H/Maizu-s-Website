@@ -22,8 +22,8 @@ function Navbar() {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-evenly",
-          height: "5.5vh",
-          width: "30vw",
+          height: "5.3vh",
+          width: "35vw",
           background: "#2F8288",
           borderRadius: "10px",
         }}
@@ -39,7 +39,7 @@ function Navbar() {
                 background: isSelected(page.path)
                   ? "rgb(52,52,52,0.4)"
                   : "#2F8288",
-                height: "5.5vh",
+                height: "5.3vh",
                 width: "30vw",
                 borderRadius: "10px",
               }}

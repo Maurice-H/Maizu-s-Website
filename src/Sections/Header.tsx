@@ -1,16 +1,24 @@
-import { Box } from "@mui/material";
+import { Box, Avatar } from "@mui/material";
+import Navbar from "./Navbar";
 
 function Header() {
   return (
     <>
       <Box
         sx={{
-          height: "10vh",
-          width: "100vh",
-          Color: "red",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "14vh",
+          width: "100vw",
         }}
       >
-        r
+        <Avatar
+          alt="maizu pb"
+          src="maizu pb.png"
+          sx={{ width: 95, height: 95, marginRight: "4%" }}
+        />
+        <Navbar />
       </Box>
     </>
   );
