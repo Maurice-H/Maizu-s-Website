@@ -13,9 +13,7 @@ function Navbar() {
   function isSelected(path: string) {
     return location.pathname === path;
   }
-  console.log(location.pathname);
   return (
-    /* Farbe#343434 */
     <>
       <Box
         sx={{
