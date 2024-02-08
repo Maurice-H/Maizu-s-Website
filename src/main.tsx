@@ -15,11 +15,12 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<HomePage />} />
-      <Route path="/GamesPage" element={<GamesPage />} />
-      <Route path="/LocalWebsitesPage" element={<LocalWebsitesPage />} />
+      <Route path="/AboutMe" element={<HomePage />} />
+      <Route path="/Games" element={<GamesPage />} />
+      <Route path="/LocalWebsites" element={<LocalWebsitesPage />} />
     </>
   ),
-  { basename: "/Maizu-Website/" }
+  { basename: "/" }
 );
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
