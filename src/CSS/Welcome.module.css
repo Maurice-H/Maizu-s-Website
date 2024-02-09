@@ -1,23 +1,31 @@
 .nezukoRunning {
   width: 100px;
   height: auto;
-  animation: running 20s 2s infinite alternate both;
+  animation-name: running;
+  animation-duration: 20s;
+  animation-delay: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
 }
 
 @keyframes running {
   0% {
-    transform: translateX(50%);
+    transform: translateX(0px) scaleX(1);
   }
   25% {
-    transform: translateX(0%);
+    transform: translateX(-800px) scaleX(1);
   }
-  50% {
-    transform: translateX(50%);
+  30% {
+    transform: translateX(-800px) scaleX(-1);
   }
   75% {
-    transform: translateX(100%);
+    transform: translateX(800px) scaleX(-1);
+  }
+  80% {
+    transform: translateX(800px) scaleX(1);
   }
   100% {
-    transform: translateX(50%);
+    transform: translateX(0px) scaleX(1);
   }
 }
