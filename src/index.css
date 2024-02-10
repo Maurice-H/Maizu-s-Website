@@ -11,6 +11,22 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --swiper-pagination-color: #2f8288;
+  --swiper-pagination-left: auto;
+  --swiper-pagination-right: 8px;
+  --swiper-pagination-bottom: 27px;
+  --swiper-pagination-top: auto;
+  --swiper-pagination-bullet-size: 25px;
+  --swiper-pagination-bullet-width: 25px;
+  --swiper-pagination-bullet-height: 25px;
+  --swiper-pagination-bullet-border-radius: 50%;
+  --swiper-pagination-bullet-inactive-color: #d7e5e6;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-bullet-horizontal-gap: 16px;
+  --swiper-pagination-bullet-vertical-gap: 6px;
+
+  --swiper-navigation-color: #d7e5e6;
 }
 
 a {

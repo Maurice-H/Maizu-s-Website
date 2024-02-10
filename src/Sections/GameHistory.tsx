@@ -1,26 +1,14 @@
 import { Box, Typography } from "@mui/material";
-import { useEffect, useState } from "react";
 import RainbowSixSiege from "./RainbowSixSiege";
 import Osu from "./Osu";
 import RocketLeague from "./RocketLeague";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectFade, Autoplay, Pagination, Navigation } from "swiper/modules";
+import style from "../CSS/GameHistory.module.css";
+
+import "swiper/css/bundle";
 
 function GameHistory() {
-  //PageIndex 0 Rocket League
-  //PageIndex 1 Osu
-  //PageIndex 2 RainbowSixSiege
-  const [pageTracker, setPageTracker] = useState(0);
-
-  function getPageIndex() {
-    return pageTracker % 3;
-  }
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setPageTracker((prev) => prev + 1);
-    }, 10000);
-    return () => clearInterval(intervalId);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
   return (
     <>
       <Box
@@ -52,45 +40,35 @@ function GameHistory() {
             borderRadius: "20px",
           }}
         >
-          <RocketLeague isHidden={getPageIndex() !== 0} />
-          <Osu isHidden={getPageIndex() !== 1} />
-          <RainbowSixSiege isHidden={getPageIndex() !== 2} />
-          <Box
-            sx={{
-              position: "absolute",
-              bottom: "-80.5%",
-              right: "54.5%",
-              height: "25px",
-              width: "25px",
-              backgroundColor: getPageIndex() !== 0 ? "#D7E5E6" : "#2F8288",
-              borderRadius: "50%",
-              display: "inline-block",
+          <Swiper
+            spaceBetween={30}
+            slidesPerView={1}
+            centeredSlides={true}
+            fadeEffect={{ crossFade: true }}
+            rewind={true}
+            speed={1000}
+            effect={"fade"}
+            autoplay={{
+              delay: 10000,
+              disableOnInteraction: true,
             }}
-          ></Box>
-          <Box
-            sx={{
-              position: "absolute",
-              bottom: "-80.5%",
-              right: "49.5%",
-              height: "25px",
-              width: "25px",
-              backgroundColor: getPageIndex() !== 1 ? "#D7E5E6" : "#2F8288",
-              borderRadius: "50%",
-              display: "inline-block",
+            pagination={{
+              clickable: true,
             }}
-          ></Box>
-          <Box
-            sx={{
-              position: "absolute",
-              bottom: "-80.5%",
-              right: "44.5%",
-              height: "25px",
-              width: "25px",
-              backgroundColor: getPageIndex() !== 2 ? "#D7E5E6" : "#2F8288",
-              borderRadius: "50%",
-              display: "inline-block",
-            }}
-          ></Box>
+            navigation={true}
+            modules={[EffectFade, Autoplay, Pagination, Navigation]}
+            className={style.swiper}
+          >
+            <SwiperSlide>
+              <RocketLeague />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Osu />
+            </SwiperSlide>
+            <SwiperSlide>
+              <RainbowSixSiege />
+            </SwiperSlide>
+          </Swiper>
         </Box>
       </Box>
     </>
