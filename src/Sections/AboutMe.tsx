@@ -1,25 +1,14 @@
 import { Box, Typography } from "@mui/material";
 import Career from "./Career";
 import Hobbys from "./Hobbys";
-import { useEffect, useState } from "react";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectFade, Autoplay, Pagination, Navigation } from "swiper/modules";
+import style from "../CSS/GameHistory.module.css";
+
+import "swiper/css/bundle";
 
 function AboutMe() {
-  //PageIndex 0 Career
-  //PageIndex 1 Hobbys
-  const [pageTracker, setPageTracker] = useState(0);
-
-  function getPageIndex() {
-    return pageTracker % 2;
-  }
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setPageTracker((prev) => prev + 1);
-    }, 10000);
-    return () => clearInterval(intervalId);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
     <>
       <Box
@@ -31,9 +20,10 @@ function AboutMe() {
           alignItems: "center",
           height: "90vh",
           width: "100vw",
+          marginTop: "5%",
         }}
       >
-        <Typography sx={{ fontSize: "3.5rem" }}>About Me </Typography>
+        <Typography sx={{ fontSize: "3.5rem" }}>About Me</Typography>
         <Box
           sx={{
             display: "flex",
@@ -48,32 +38,32 @@ function AboutMe() {
             borderRadius: "20px",
           }}
         >
-          <Career isHidden={getPageIndex() !== 0} />
-          <Hobbys isHidden={getPageIndex() !== 1} />
-          <Box
-            sx={{
-              position: "absolute",
-              bottom: "-45.5%",
-              right: "52%",
-              height: "25px",
-              width: "25px",
-              backgroundColor: getPageIndex() !== 0 ? "#D7E5E6" : "#2F8288",
-              borderRadius: "50%",
-              display: "inline-block",
+          <Swiper
+            spaceBetween={30}
+            slidesPerView={1}
+            centeredSlides={true}
+            fadeEffect={{ crossFade: true }}
+            rewind={true}
+            speed={1000}
+            effect={"fade"}
+            autoplay={{
+              delay: 10000,
+              disableOnInteraction: true,
             }}
-          ></Box>
-          <Box
-            sx={{
-              position: "absolute",
-              bottom: "-45.5%",
-              right: "47%",
-              height: "25px",
-              width: "25px",
-              backgroundColor: getPageIndex() !== 1 ? "#D7E5E6" : "#2F8288",
-              borderRadius: "50%",
-              display: "inline-block",
+            pagination={{
+              clickable: true,
             }}
-          ></Box>
+            navigation={true}
+            modules={[EffectFade, Autoplay, Pagination, Navigation]}
+            className={style.swiper}
+          >
+            <SwiperSlide>
+              <Career />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Hobbys />
+            </SwiperSlide>
+          </Swiper>
         </Box>
       </Box>
     </>

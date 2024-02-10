@@ -1,14 +1,10 @@
 import { Avatar, Box, Link, Typography } from "@mui/material";
 import { useState, useEffect } from "react";
 
-type HobbysProps = {
-  isHidden: boolean;
-};
-
-function Hobbys({ isHidden }: HobbysProps) {
+function Hobbys() {
   const gamingAvatarIcons = [
     "gamingAvatarIcons/rocket league.ico",
-    "gamingAvatarIcons/osu.png",
+    "gamingAvatarIcons/osu.ico",
   ];
 
   const codingAvatarIcons = [
@@ -37,18 +33,16 @@ function Hobbys({ isHidden }: HobbysProps) {
     <>
       <Box
         sx={{
-          display: isHidden ? "none" : "flex",
-          opacity: isHidden ? "0" : "1",
+          display: "flex",
           height: "70vh",
           width: "55vw",
-          transition: "opacity 3s, display 3s",
         }}
       >
         {/* Code smell: Needs refactoring for visibility and usability */}
         {/* Gaming */}
         <Box
           sx={{
-            display: isHidden ? "hidden" : "flex",
+            display: "flex",
             flexDirection: "column",
             alignContent: "center",
             justifyContent: "flexstart",

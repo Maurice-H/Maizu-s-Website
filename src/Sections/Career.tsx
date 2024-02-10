@@ -1,22 +1,16 @@
 import { Box, Typography } from "@mui/material";
 import styles from "../CSS/AboutMe.module.css";
 
-type CareerProps = {
-  isHidden: boolean;
-};
-
-function Career({ isHidden }: CareerProps) {
+function Career() {
   return (
     <>
       {/* Code smell: Needs refactoring for visibility and usability */}
       {/* EyeC Component */}
       <Box
         sx={{
-          display: isHidden ? "none" : "flex",
-          opacity: isHidden ? "0" : "1",
+          display: "flex",
           height: "70vh",
           width: "55vw",
-          transition: "opacity 3s, display 3s",
         }}
       >
         <Box
@@ -29,7 +23,7 @@ function Career({ isHidden }: CareerProps) {
             height: "48vh",
             width: "15vw",
             backgroundImage: "linear-gradient(#0F1035, #2F8288, #0F1035)",
-            marginLeft: "5%",
+            marginLeft: "6%",
             marginTop: "8%",
             borderRadius: "10px",
           }}
@@ -99,7 +93,7 @@ function Career({ isHidden }: CareerProps) {
             width: "15vw",
             backgroundImage: "linear-gradient(#0F1035, #2F8288, #0F1035)",
             marginTop: "8%",
-            marginLeft: "5%",
+            marginLeft: "3%",
             borderRadius: "10px",
           }}
         >
@@ -188,7 +182,7 @@ function Career({ isHidden }: CareerProps) {
             height: "30vh",
             width: "15vw",
             borderRadius: "10px",
-            marginLeft: "5%",
+            marginLeft: "3.5%",
             marginTop: "18%",
           }}
         >
