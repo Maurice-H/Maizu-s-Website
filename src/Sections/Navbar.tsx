@@ -13,6 +13,15 @@ function Navbar() {
   function isSelected(path: string) {
     return location.pathname === path;
   }
+
+  function isFirst(index: number) {
+    return 0 === index;
+  }
+
+  function isLast(index: number) {
+    return pages.length - 1 === index;
+  }
+
   return (
     <>
       <Box
@@ -39,7 +48,14 @@ function Navbar() {
                   : "#2F8288",
                 height: "5.3vh",
                 width: "30vw",
-                borderRadius: "10px",
+                borderTopLeftRadius:
+                  isFirst(index) || isSelected(page.path) ? "10px" : "0px",
+                borderBottomLeftRadius:
+                  isFirst(index) || isSelected(page.path) ? "10px" : "0px",
+                borderTopRightRadius:
+                  isLast(index) || isSelected(page.path) ? "10px" : "0px",
+                borderBottomRightRadius:
+                  isLast(index) || isSelected(page.path) ? "10px" : "0px",
               }}
             >
               <Link
