@@ -1,5 +1,6 @@
 import { Box, Link } from "@mui/material";
 import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 function Navbar() {
   const pages = [
@@ -21,6 +22,12 @@ function Navbar() {
   function isLast(index: number) {
     return pages.length - 1 === index;
   }
+
+  useEffect(() => {
+    if (location.pathname === "/AboutMe") {
+      window.scrollBy(0, 300);
+    }
+  });
 
   return (
     <>
