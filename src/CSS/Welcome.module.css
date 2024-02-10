@@ -3,7 +3,7 @@
   height: auto;
   animation-name: running;
   animation-duration: 20s;
-  animation-delay: 2s;
+  animation-delay: 0.5s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
