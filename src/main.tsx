@@ -20,7 +20,7 @@ const router = createBrowserRouter(
       <Route path="/LocalWebsites" element={<LocalWebsitesPage />} />
     </>
   ),
-  { basename: "/Maizu-s-Website/" }
+  //{ basename: "" }
 );
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
