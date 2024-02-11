@@ -1,18 +1,20 @@
 import { Box, Link } from "@mui/material";
-import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
 function Navbar() {
   const pages = [
-    { name: "Home", path: "/" },
-    { name: "About Me", path: "/AboutMe" },
-    { name: "Games", path: "/Games" },
-    { name: "Local Websites", path: "/LocalWebsites" },
+    { name: "Home", path: "/Maizu-s-Website/", hash: "" },
+    { name: "About Me", path: "/Maizu-s-Website/#/AboutMe", hash: "#/AboutMe" },
+    { name: "Games", path: "/Maizu-s-Website/#/Games", hash: "#/Games" },
+    {
+      name: "Local Websites",
+      path: "/Maizu-s-Website/#/LocalWebsites",
+      hash: "#/LocalWebsites",
+    },
   ];
-  const location = useLocation();
 
-  function isSelected(path: string) {
-    return location.pathname === path;
+  function isSelected(hash: string) {
+    return window.location.hash === hash;
   }
 
   function isFirst(index: number) {
@@ -24,10 +26,10 @@ function Navbar() {
   }
 
   useEffect(() => {
-    if (location.pathname === "/AboutMe") {
-      window.scrollBy(0, 300);
+    if (window.location.hash === "#/AboutMe") {
+      window.scrollBy(0, 700);
     }
-  });
+  }, []);
 
   return (
     <>
@@ -50,19 +52,19 @@ function Navbar() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-evenly",
-                background: isSelected(page.path)
+                background: isSelected(page.hash)
                   ? "rgb(52,52,52,0.4)"
                   : "#2F8288",
                 height: "5.3vh",
                 width: "30vw",
                 borderTopLeftRadius:
-                  isFirst(index) || isSelected(page.path) ? "10px" : "0px",
+                  isFirst(index) || isSelected(page.hash) ? "10px" : "0px",
                 borderBottomLeftRadius:
-                  isFirst(index) || isSelected(page.path) ? "10px" : "0px",
+                  isFirst(index) || isSelected(page.hash) ? "10px" : "0px",
                 borderTopRightRadius:
-                  isLast(index) || isSelected(page.path) ? "10px" : "0px",
+                  isLast(index) || isSelected(page.hash) ? "10px" : "0px",
                 borderBottomRightRadius:
-                  isLast(index) || isSelected(page.path) ? "10px" : "0px",
+                  isLast(index) || isSelected(page.hash) ? "10px" : "0px",
               }}
             >
               <Link
