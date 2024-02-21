@@ -31,7 +31,7 @@ function RocketLeague() {
           times, played Nitro
         </Typography>
         <Typography sx={{ fontSize: "1.4rem" }}>
-          League in Division 2, and won a couple of tournaments. Made around 5k
+          League in Division 2, and won a couple of tournaments. Made around 7k
           from boosting. I
         </Typography>
         <Typography sx={{ fontSize: "1.4rem" }}>
