@@ -27,11 +27,11 @@ function RocketLeague() {
           }}
         />
         <Typography sx={{ fontSize: "1.4rem", marginTop: "6%" }}>
-          I played Rocket League for around 5k hours now. I reached SSL multiple
+          I played Rocket League for around 7k hours now. I reached SSL multiple
           times, played Nitro
         </Typography>
         <Typography sx={{ fontSize: "1.4rem" }}>
-          League in Division 2, and won a couple of tournaments. Made around 7k
+          League in Division 2, and won a couple of tournaments. Made around 5k
           from boosting. I
         </Typography>
         <Typography sx={{ fontSize: "1.4rem" }}>
